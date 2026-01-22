@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors - Primary */
+  --color-burgundy: #8B1538;
+  --color-burgundy-dark: #6B0F2A;
+  --color-burgundy-light: #A51B45;
+  --color-burgundy-lighter: #C42A5A;
+  
+  /* Colors - Status */
+  --color-empty-room: #90EE90;
+  --color-empty-room-bright: #B4FFB4;
+  --color-empty-room-dark: #7ACC7A;
+  --color-occupied: #DC2626;
+  --color-occupied-light: #F87171;
+  --color-occupied-dark: #B91C1C;
+  --color-upcoming: #FBBF24;
+  --color-upcoming-light: #FCD34D;
+  --color-upcoming-dark: #D97706;
+  
+  /* Colors - Neutral */
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-background: #F9FAFB;
+  --color-background-card: #FFFFFF;
+  --color-border: #E5E7EB;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Typography */
+  --font-family: "Malgun Gothic", "맑은 고딕", "Segoe UI", Arial, sans-serif;
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+  --font-size-h4: 18px;
+  --font-size-body: 14px;
+  --font-size-body-large: 16px;
+  --font-size-body-small: 12px;
+  --font-size-button: 14px;
+  --font-size-caption: 11px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-out;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+}
+
+body {
+  color: var(--color-text-primary);
+  background: var(--color-background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 2px;
+}
