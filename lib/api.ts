@@ -143,7 +143,7 @@ function generateSchedules(rooms: Room[]): Schedule[] {
 let cachedRooms: Room[] | null = null
 let cachedSchedules: Schedule[] | null = null
 
-function initializeData() {
+function initializeData(): { rooms: Room[]; schedules: Schedule[] } {
   if (typeof window === 'undefined') {
     // 서버 사이드에서는 빈 데이터 반환
     return { rooms: [], schedules: [] }
@@ -157,10 +157,10 @@ function initializeData() {
     try {
       const parsed = JSON.parse(savedData)
       // 버전이 일치하면 기존 데이터 사용
-      if (parsed.version === DATA_VERSION) {
+      if (parsed.version === DATA_VERSION && parsed.rooms && parsed.schedules) {
         cachedRooms = parsed.rooms
         cachedSchedules = parsed.schedules
-        return { rooms: cachedRooms, schedules: cachedSchedules }
+        return { rooms: parsed.rooms, schedules: parsed.schedules }
       }
     } catch (e) {
       console.error('Failed to parse saved data:', e)

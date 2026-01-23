@@ -33,18 +33,10 @@ export interface Room {
   remainingTime?: string // 남은 여유 시간 (예: "1시간 30분")
 }
 
+import type { ScheduleSlot } from './schedule'
+
 export interface RoomWithSchedule extends Room {
   schedule?: ScheduleSlot[]
-}
-
-export interface ScheduleSlot {
-  id: string
-  roomId: string
-  dayOfWeek: number // 0: 일요일, 1: 월요일, ..., 6: 토요일
-  startTime: string // "09:00"
-  endTime: string // "10:00"
-  className?: string // 수업명 (예: "영어회화 기초")
-  isOccupied: boolean // 해당 시간대에 수업이 있는지 여부
 }
 
 export interface Building {
